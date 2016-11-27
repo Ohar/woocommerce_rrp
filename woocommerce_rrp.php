@@ -1,8 +1,8 @@
 <?
 /*
-Plugin Name: WooCommerce field buy price
+Plugin Name: WooCommerce RRP calculator
 Plugin URI: https://github.com/Ohar/woocommerce_rrp
-Description:  Plugin adds custom fields WooCommerce products and calculate RRP based on it.
+Description: Plugin adds custom fields WooCommerce products and calculate RRP based on it.
 Author: Pavel Lysenko aka Ohar
 Author URI: http://ohar.name/
 Contributors: ohar
