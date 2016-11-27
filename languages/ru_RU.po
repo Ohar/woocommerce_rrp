@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Project-Id-Version: WooCommerce field buy price\n"
+"POT-Creation-Date: 2016-11-28 02:36+0300\n"
+"PO-Revision-Date: 2016-11-28 02:39+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: woocommerce_rrp.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: ru_RU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:24
+msgid "— No change —"
+msgstr ""
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:25
+msgid "Change to:"
+msgstr ""
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:26
+msgid "Increase by (fixed amount or %):"
+msgstr ""
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:27
+msgid "Decrease by (fixed amount or %):"
+msgstr ""
+
+#: woocommerce_rrp.php:22
+msgid "Buy Price"
+msgstr "Закупочная цена"
+
+#: woocommerce_rrp.php:24
+msgid "Price of buying product from vendor"
+msgstr "Цена закупки товара у поставщика"
+
+#: woocommerce_rrp.php:33
+msgid "Package Price"
+msgstr "Стоимость упаковки"
+
+#: woocommerce_rrp.php:35
+msgid "Price of package material"
+msgstr "Стоимость упаковочного материала"
+
+#: woocommerce_rrp.php:44
+msgid "Shipping Price"
+msgstr "Цена доставки"
+
+#: woocommerce_rrp.php:46
+msgid "Price of shipping"
+msgstr "Цена доставки"
+
+#: woocommerce_rrp.php:55 woocommerce_rrp.php:57
+msgid "Minimal Profit"
+msgstr "Минимальная прибыль"
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce field buy price"
+msgstr "Поле с закупочной ценой товара для WooCommerce"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/Ohar/woocommerce_rrp"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Plugin adds custom fields WooCommerce products and calculate RRP based on it."
+msgstr "Плагин добавляет пользовательские поля к товарам WooCommerce и рассчитывает РРЦ на их основе."
+
+#. Author of the plugin/theme
+msgid "Pavel Lysenko aka Ohar"
+msgstr "Павел Лысенко или Ohar"
+
+#. Author URI of the plugin/theme
+msgid "http://ohar.name/"
+msgstr ""
