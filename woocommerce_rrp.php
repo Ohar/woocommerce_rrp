@@ -16,6 +16,17 @@ Domain Path: /languages
 // 1. http://www.remicorson.com/mastering-woocommerce-products-custom-fields/
 // 2. http://stackoverflow.com/questions/27262032/add-custom-product-field-on-quick-edit-option-on-the-product-listing-of-a-woocom
 
+
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_bulk_edit_save.php');
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_bulk_edit_show.php');
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_general_add.php');
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_general_save.php');
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_add.php');
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_show.php');
+include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_save.php');
+
+include_once(plugin_dir_path( __FILE__ ) .'register-menu.php');
+
 $field_list = array(
 	array(
 		'id' => 'buy_price',
@@ -63,15 +74,6 @@ $field_list = array(
 	),
 );
 
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_bulk_edit_save.php');
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_bulk_edit_show.php');
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_general_add.php');
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_general_save.php');
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_add.php');
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_show.php');
-include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_save.php');
-include_once(plugin_dir_path( __FILE__ ) .'l10n.php');
-
 foreach ($field_list as $field) {
 	new WoocommerceRrpFieldGeneralAdd ($field);
 	new WoocommerceRrpFieldGeneralSave ($field);
@@ -81,3 +83,4 @@ foreach ($field_list as $field) {
 	new WoocommerceRrpFieldQuickEditShow ($field);
 	new WoocommerceRrpFieldQuickEditSave ($field);
 }
+	

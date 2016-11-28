@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: WooCommerce field buy price\n"
-"POT-Creation-Date: 2016-11-28 02:36+0300\n"
-"PO-Revision-Date: 2016-11-28 02:35+0300\n"
+"Project-Id-Version: WooCommerce RRP calculator\n"
+"POT-Creation-Date: 2016-11-28 22:44+0300\n"
+"PO-Revision-Date: 2016-11-28 22:43+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "Minimal Profit"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WooCommerce field buy price"
+msgid "WooCommerce RRP calculator"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
