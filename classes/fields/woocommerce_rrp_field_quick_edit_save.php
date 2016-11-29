@@ -1,5 +1,7 @@
 <?
 
+defined( 'ABSPATH' ) or die( '' );
+
 // QUICK EDIT
 
 // Save field to the quick edit

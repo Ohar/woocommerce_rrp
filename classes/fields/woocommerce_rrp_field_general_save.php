@@ -1,5 +1,7 @@
 <?
 
+defined( 'ABSPATH' ) or die( '' );
+
 // PRODUCT PAGE
 
 // Save Fields

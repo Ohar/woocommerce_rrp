@@ -1,5 +1,7 @@
 <?
 
+defined( 'ABSPATH' ) or die( '' );
+
 // BULK EDIT
 
 // Add field to the bulk edit

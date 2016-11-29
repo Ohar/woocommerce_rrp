@@ -6,7 +6,7 @@ Description: Plugin adds custom fields WooCommerce products and calculate RRP ba
 Author: Pavel Lysenko aka Ohar
 Author URI: http://ohar.name/
 Contributors: ohar
-Version: 0.0.2
+Version: 0.0.3
 License: MIT
 Text Domain: woocommerce_rrp
 Domain Path: /languages
@@ -16,6 +16,7 @@ Domain Path: /languages
 // 1. http://www.remicorson.com/mastering-woocommerce-products-custom-fields/
 // 2. http://stackoverflow.com/questions/27262032/add-custom-product-field-on-quick-edit-option-on-the-product-listing-of-a-woocom
 
+defined( 'ABSPATH' ) or die( '' );
 
 include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_bulk_edit_save.php');
 include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_bulk_edit_show.php');
@@ -25,7 +26,7 @@ include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_
 include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_show.php');
 include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_save.php');
 
-include_once(plugin_dir_path( __FILE__ ) .'register-menu.php');
+include_once(plugin_dir_path( __FILE__ ) .'options.php');
 
 $field_list = array(
 	array(
