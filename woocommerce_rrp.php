@@ -6,7 +6,7 @@ Description: Plugin adds custom fields WooCommerce products and calculate RRP ba
 Author: Pavel Lysenko aka Ohar
 Author URI: http://ohar.name/
 Contributors: ohar
-Version: 0.0.3
+Version: 1.0.0
 License: MIT
 Text Domain: woocommerce_rrp
 Domain Path: /languages
@@ -27,13 +27,14 @@ include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_
 include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_quick_edit_save.php');
 
 include_once(plugin_dir_path( __FILE__ ) .'options.php');
+include_once(plugin_dir_path( __FILE__ ) .'add_calculated_rrp_to_product.php');
 
 $field_list = array(
 	array(
 		'id' => 'buy_price',
-		'label' => __( 'Buy Price', 'woocommerce_rrp' ),
+		'label' => __( 'Buy Price, ₽', 'woocommerce_rrp' ),
 		'placeholder' => '0',
-		'description' => __( 'Price of buying product from vendor', 'woocommerce_rrp' ),
+		'description' => __( 'Cost of buying product from vendor', 'woocommerce_rrp' ),
 		'type' => 'number',
 		'attributes' => array(
 			'step' 	=> '1',
@@ -41,10 +42,10 @@ $field_list = array(
 		)
 	),
 	array(
-		'id' => 'package_price',
-		'label' => __( 'Package Price', 'woocommerce_rrp' ),
-		'placeholder' => '0',
-		'description' => __( 'Price of package material', 'woocommerce_rrp' ),
+		'id' => 'package_cost',
+		'label' => __( 'Package Cost, ₽', 'woocommerce_rrp' ),
+		'placeholder' => get_option('package_cost'),
+		'description' => __( 'Cost of package material for this specific product', 'woocommerce_rrp' ),
 		'type' => 'number',
 		'attributes' => array(
 			'step' 	=> '1',
@@ -52,21 +53,55 @@ $field_list = array(
 		)
 	),
 	array(
-		'id' => 'shipping_price',
-		'label' => __( 'Shipping Price', 'woocommerce_rrp' ),
-		'placeholder' => '0',
-		'description' => __( 'Price of shipping', 'woocommerce_rrp' ),
+		'id' => 'shipping_cost',
+		'label' => __( 'Shipping Cost, ₽', 'woocommerce_rrp' ),
+		'placeholder' => get_option('shipping_cost'),
+		'description' => __( 'Cost of shipping for this specific product', 'woocommerce_rrp' ),
 		'type' => 'number',
 		'attributes' => array(
 			'step' 	=> '1',
 			'min'	  => '0'
+		)
+	),
+	array(
+		'id' => 'ads_cost',
+		'label' => __( 'Ads Cost, ₽', 'woocommerce_rrp' ),
+		'placeholder' => get_option('ads_cost'),
+		'description' => __( 'Cost of advertising for this specific product', 'woocommerce_rrp' ),
+		'type' => 'number',
+		'attributes' => array(
+			'step' 	=> '1',
+			'min'	  => '0'
+		)
+	),
+	array(
+		'id' => 'tax_rate',
+		'label' => __( 'Tax Rate, %', 'woocommerce_rrp' ),
+		'placeholder' => get_option('tax_rate'),
+		'description' => __( 'Tax rate on the result price', 'woocommerce_rrp' ),
+		'type' => 'number',
+		'attributes' => array(
+			'step' 	=> '1',
+			'min'	  => '0',
+			'max'	  => '100'
 		)
 	),
 	array(
 		'id' => 'min_profit',
-		'label' => __( 'Minimal Profit', 'woocommerce_rrp' ),
-		'placeholder' => '0',
-		'description' => __( 'Minimal Profit', 'woocommerce_rrp' ),
+		'label' => __( 'Minimal Profit, ₽', 'woocommerce_rrp' ),
+		'placeholder' => get_option('min_profit'),
+		'description' => __( 'Minimal profit for this specific product, ₽', 'woocommerce_rrp' ),
+		'type' => 'number',
+		'attributes' => array(
+			'step' 	=> '1',
+			'min'	  => '0'
+		)
+	),
+	array(
+		'id' => 'desired_profit',
+		'label' => __( 'Desired Profit, %', 'woocommerce_rrp' ),
+		'placeholder' => get_option('desired_profit'),
+		'description' => __( 'Desired profit for this specific product, % from price', 'woocommerce_rrp' ),
 		'type' => 'number',
 		'attributes' => array(
 			'step' 	=> '1',
@@ -84,4 +119,3 @@ foreach ($field_list as $field) {
 	new WoocommerceRrpFieldQuickEditShow ($field);
 	new WoocommerceRrpFieldQuickEditSave ($field);
 }
-	
