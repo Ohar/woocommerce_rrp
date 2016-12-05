@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce RRP calculator\n"
-"POT-Creation-Date: 2016-11-29 01:31+0300\n"
-"PO-Revision-Date: 2016-11-29 01:32+0300\n"
+"POT-Creation-Date: 2016-12-06 00:12+0300\n"
+"PO-Revision-Date: 2016-12-06 00:22+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -21,85 +21,144 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:24
-msgid "— No change —"
-msgstr "- Не менять -"
+#: add_calculate_rrp_btn_to_bulk_edit.php:34
+#: add_calculate_rrp_btn_to_bulk_edit.php:35
+msgid "Set price to RRP"
+msgstr "Установить РРЦ вместо цены"
 
-#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:25
-msgid "Change to:"
-msgstr "Изменить на:"
+#: add_calculate_rrp_btn_to_bulk_edit.php:127
+#, php-format
+msgid "Product price setted to RRP."
+msgid_plural "%s product prices setted to RRP."
+msgstr[0] "Цена продукты установлена как РРЦ"
+msgstr[1] "Цены %s продуктов установлены как РРЦ"
+msgstr[2] "Цены %s продуктов установлены как РРЦ"
 
-#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:26
-msgid "Increase by (fixed amount or %):"
-msgstr "Увеличить на \"фиксированное значение или %\""
+#: add_calculated_rrp_to_product.php:28
+msgid "RRP, ₽"
+msgstr "РРЦ, ₽"
 
-#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:27
-msgid "Decrease by (fixed amount or %):"
-msgstr "Уменьшить на \"фиксированное значение или %\""
-
-#: register-menu.php:8 register-menu.php:9
-msgid "RRP"
-msgstr "РРЦ"
-
-#: register-menu.php:19
-msgid "Recommended Retail Price"
-msgstr "Рекомендуемая розничная цена"
-
-#: register-menu.php:20
-msgid "Common Params"
-msgstr "Общие параметры"
-
-#: register-menu.php:25
-msgid "Package Cost"
-msgstr "Стоимость упаковки"
-
-#: register-menu.php:38
-msgid "Shipping Cost"
-msgstr "Стоимость доставки"
-
-#: register-menu.php:51
-msgid "Ads Cost"
-msgstr "Стоимость рекламы"
-
-#: register-menu.php:64
-msgid "Tax Rate"
-msgstr "Налог"
-
-#: register-menu.php:78
-msgid "Min Profit"
-msgstr "Минимальная прибыль"
-
-#: register-menu.php:92
-msgid "Save changes"
-msgstr "Сохранить изменения"
-
-#: woocommerce_rrp.php:33
+#: add_table_column.php:11 options.php:167 woocommerce_rrp.php:37
 msgid "Buy Price"
 msgstr "Закупочная цена"
 
-#: woocommerce_rrp.php:35
-msgid "Price of buying product from vendor"
-msgstr "Цена закупки товара у поставщика"
+#: add_table_column.php:12 options.php:24 options.php:25 options.php:177
+#: register-menu.php:10 register-menu.php:11
+msgid "RRP"
+msgstr "РРЦ"
 
-#: woocommerce_rrp.php:44
-msgid "Package Price"
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:26
+msgid "— No change —"
+msgstr "- Не менять -"
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:27
+msgid "Change to:"
+msgstr "Изменить на:"
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:28
+msgid "Increase by (fixed amount or %):"
+msgstr "Увеличить на \"фиксированное значение или %\""
+
+#: classes/fields/woocommerce_rrp_field_bulk_edit_show.php:29
+msgid "Decrease by (fixed amount or %):"
+msgstr "Уменьшить на \"фиксированное значение или %\""
+
+#: options.php:43 register-menu.php:21
+msgid "Recommended Retail Price"
+msgstr "Рекомендуемая розничная цена"
+
+#: options.php:44
+msgid "RRP Calculation Params"
+msgstr "Параметры расчёта РРЦ"
+
+#: options.php:45
+msgid "Costs"
+msgstr "Расходы"
+
+#: options.php:50 register-menu.php:27 woocommerce_rrp.php:48
+msgid "Package Cost"
 msgstr "Стоимость упаковки"
 
-#: woocommerce_rrp.php:46
-msgid "Price of package material"
-msgstr "Стоимость упаковочного материала"
+#: options.php:65 register-menu.php:40 woocommerce_rrp.php:59
+msgid "Shipping Cost"
+msgstr "Стоимость доставки"
 
-#: woocommerce_rrp.php:55
-msgid "Shipping Price"
-msgstr "Цена доставки"
+#: options.php:80 register-menu.php:53 woocommerce_rrp.php:70
+msgid "Ads Cost"
+msgstr "Стоимость рекламы"
 
-#: woocommerce_rrp.php:57
-msgid "Price of shipping"
-msgstr "Цена доставки"
+#: options.php:95
+msgid "Taxes"
+msgstr "Налоги"
 
-#: woocommerce_rrp.php:66 woocommerce_rrp.php:68
+#: options.php:100 register-menu.php:66
+msgid "Tax Rate"
+msgstr "Налог"
+
+#: options.php:115
+msgid "Profits"
+msgstr "Прибыль"
+
+#: options.php:120 register-menu.php:80
+msgid "Min Profit"
+msgstr "Минимальная прибыль"
+
+#: options.php:135
+msgid "Desired Profit"
+msgstr "Желаемая прибыль"
+
+#: options.php:164
+msgid "RRP Examples for different buy prices"
+msgstr "Примеры расчёта РРЦ для разных закупочных цен"
+
+#: register-menu.php:22
+msgid "Common Params"
+msgstr "Общие параметры"
+
+#: register-menu.php:94
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: woocommerce_rrp.php:39
+msgid "Cost of buying product from vendor"
+msgstr "Расходы на покупку этого конкретного товара у поставщика"
+
+#: woocommerce_rrp.php:50
+msgid "Cost of package material for this specific product"
+msgstr "Расходы на упаковку этого конкретного товара"
+
+#: woocommerce_rrp.php:61
+msgid "Cost of shipping for this specific product"
+msgstr "Расходы на доставку этого конкретного товара"
+
+#: woocommerce_rrp.php:72
+msgid "Cost of advertising for this specific product"
+msgstr "Расходы на рекламу для этого конкретного товара"
+
+#: woocommerce_rrp.php:81
+msgid "Tax Rate, %"
+msgstr "Налог, %"
+
+#: woocommerce_rrp.php:83
+msgid "Tax rate on the result price"
+msgstr "Налог на итоговую цену"
+
+#: woocommerce_rrp.php:93
 msgid "Minimal Profit"
 msgstr "Минимальная прибыль"
+
+#: woocommerce_rrp.php:95
+msgid "Minimal profit for this specific product, ₽"
+msgstr "Минимальная прибыль с этого конкретного товара, ₽"
+
+#: woocommerce_rrp.php:104
+msgid "Desired Profit, %"
+msgstr "Желаемая прибыль, %"
+
+#: woocommerce_rrp.php:106
+#, php-format
+msgid "Desired profit for this specific product, % from price"
+msgstr "Желаемый доход для этого конкретного товара, % от цены"
 
 #. Plugin Name of the plugin/theme
 msgid "WooCommerce RRP calculator"
@@ -123,3 +182,18 @@ msgstr "Павел Лысенко или Ohar"
 #. Author URI of the plugin/theme
 msgid "http://ohar.name/"
 msgstr ""
+
+#~ msgid "Price of buying product from vendor"
+#~ msgstr "Цена закупки товара у поставщика"
+
+#~ msgid "Package Price"
+#~ msgstr "Стоимость упаковки"
+
+#~ msgid "Price of package material"
+#~ msgstr "Стоимость упаковочного материала"
+
+#~ msgid "Shipping Price"
+#~ msgstr "Цена доставки"
+
+#~ msgid "Price of shipping"
+#~ msgstr "Цена доставки"
