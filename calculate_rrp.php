@@ -3,14 +3,18 @@
 defined( 'ABSPATH' ) or die( '' );
 
 function calculate_rrp ($buy_price, $params) {
-	$costs = $buy_price + $params['ads_cost'] + $params['shipping_cost'] + $params['package_cost'];
+	$costs = $buy_price + $params['ads_cost'] + $params['shipping_cost'] + $params['package_cost'];	
 	
-	$costs_min_profit = $costs + $params['min_profit'];	
-	$costs_desired_profit = add_back_percents($costs, $params['desired_profit']);
+	$min_profit_costs = $costs + $params['min_profit'];	
+	$min_profit_percents = $params['tax_rate'];	
 	
-	$costs_with_profit = max(array($costs_min_profit, $costs_desired_profit));	
+	$desired_profit_costs = $costs;	
+	$desired_profit_percents = $params['desired_profit'] + $params['tax_rate'];	
+		
+	$rrp_min_profit = add_back_percents($min_profit_costs, $min_profit_percents);	
+	$rrp_desired_profit = add_back_percents($desired_profit_costs, $desired_profit_percents);	
 	
-	$rrp = add_back_percents($costs_with_profit, $params['tax_rate']);	
+	$rrp = max(array($rrp_min_profit, $rrp_desired_profit));
 	
 	$rrp_ceiled = ceil($rrp / 10) * 10;
 	
