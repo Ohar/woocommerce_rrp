@@ -6,7 +6,7 @@ Description: Plugin adds custom fields WooCommerce products and calculate RRP ba
 Author: Pavel Lysenko aka Ohar
 Author URI: http://ohar.name/
 Contributors: ohar
-Version: 1.0.0
+Version: 1.0.2
 License: MIT
 Text Domain: woocommerce_rrp
 Domain Path: /languages
@@ -28,11 +28,13 @@ include_once(plugin_dir_path( __FILE__ ) .'classes/fields/woocommerce_rrp_field_
 
 include_once(plugin_dir_path( __FILE__ ) .'options.php');
 include_once(plugin_dir_path( __FILE__ ) .'add_calculated_rrp_to_product.php');
+include_once(plugin_dir_path( __FILE__ ) .'add_table_column.php');
+include_once(plugin_dir_path( __FILE__ ) .'add_calculate_rrp_btn_to_bulk_edit.php');
 
 $field_list = array(
 	array(
 		'id' => 'buy_price',
-		'label' => __( 'Buy Price, ₽', 'woocommerce_rrp' ),
+		'label' => __( 'Buy Price', 'woocommerce_rrp' ).', '.get_woocommerce_currency_symbol(),
 		'placeholder' => '0',
 		'description' => __( 'Cost of buying product from vendor', 'woocommerce_rrp' ),
 		'type' => 'number',
@@ -43,7 +45,7 @@ $field_list = array(
 	),
 	array(
 		'id' => 'package_cost',
-		'label' => __( 'Package Cost, ₽', 'woocommerce_rrp' ),
+		'label' => __( 'Package Cost', 'woocommerce_rrp' ).', '.get_woocommerce_currency_symbol(),
 		'placeholder' => get_option('package_cost'),
 		'description' => __( 'Cost of package material for this specific product', 'woocommerce_rrp' ),
 		'type' => 'number',
@@ -54,7 +56,7 @@ $field_list = array(
 	),
 	array(
 		'id' => 'shipping_cost',
-		'label' => __( 'Shipping Cost, ₽', 'woocommerce_rrp' ),
+		'label' => __( 'Shipping Cost', 'woocommerce_rrp' ).', '.get_woocommerce_currency_symbol(),
 		'placeholder' => get_option('shipping_cost'),
 		'description' => __( 'Cost of shipping for this specific product', 'woocommerce_rrp' ),
 		'type' => 'number',
@@ -65,7 +67,7 @@ $field_list = array(
 	),
 	array(
 		'id' => 'ads_cost',
-		'label' => __( 'Ads Cost, ₽', 'woocommerce_rrp' ),
+		'label' => __( 'Ads Cost', 'woocommerce_rrp' ).', '.get_woocommerce_currency_symbol(),
 		'placeholder' => get_option('ads_cost'),
 		'description' => __( 'Cost of advertising for this specific product', 'woocommerce_rrp' ),
 		'type' => 'number',
@@ -88,7 +90,7 @@ $field_list = array(
 	),
 	array(
 		'id' => 'min_profit',
-		'label' => __( 'Minimal Profit, ₽', 'woocommerce_rrp' ),
+		'label' => __( 'Minimal Profit', 'woocommerce_rrp' ).', '.get_woocommerce_currency_symbol(),
 		'placeholder' => get_option('min_profit'),
 		'description' => __( 'Minimal profit for this specific product, ₽', 'woocommerce_rrp' ),
 		'type' => 'number',

@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) or die( '' );
 
 include_once(plugin_dir_path( __FILE__ ) .'calculate_rrp.php');
+include_once(plugin_dir_path( __FILE__ ) .'get_rrp_param.php');
 
 add_action( 'woocommerce_product_options_general_product_data', 'woocommerce_rrp_add_calculated_rrp_to_product', 99);
 
@@ -32,11 +33,4 @@ function woocommerce_rrp_add_calculated_rrp_to_product () {
 		</p>
 	</div>
 	<?
-}
-
-function get_rrp_param ($product_id, $prop_id) {
-	$prop_meta = get_post_meta($product_id, $prop_id, true);
-	$prop_options = get_option($prop_id);
-	$prop = $prop_meta === '' ? $prop_options : $prop_meta;
-	return $prop;
 }
