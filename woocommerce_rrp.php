@@ -6,7 +6,7 @@ Description: Plugin adds custom fields WooCommerce products and calculate RRP ba
 Author: Pavel Lysenko aka Ohar
 Author URI: http://ohar.name/
 Contributors: ohar
-Version: 1.0.4
+Version: 1.0.5
 License: MIT
 Text Domain: woocommerce_rrp
 Domain Path: /languages

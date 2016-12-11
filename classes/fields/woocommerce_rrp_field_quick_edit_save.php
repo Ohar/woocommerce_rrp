@@ -18,11 +18,16 @@ class WoocommerceRrpFieldQuickEditSave {
 			
 			if ($product->is_type('simple')) {
 				$post_id = $product->id;
-				if ( isset( $_REQUEST[$field['id']] ) ) {
-					$field_value = ceil(trim(esc_attr( $_REQUEST[$field['id']] )));
+				
+				if ( isset( $_REQUEST[$field['id']] )) {
+					if ($_REQUEST[$field['id']] !== '') {
+						$field_value = ceil(trim(esc_attr( $_REQUEST[$field['id']] )));
+					} else {
+						$field_value = '';
+					}					
 					update_post_meta( $post_id, $field['id'], wc_clean( $field_value ) );
 				}
+				
 			}
 		}
 }
-
